@@ -1,4 +1,4 @@
-name: MLOpsPipeline
+
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ on:
         required: false
         default: true
     
-  release:
+  releases:
     types: {created}
     branches: { main }
     tags: { "v*.*.*" }
