@@ -20,10 +20,10 @@ on:
         required: false
         default: true
     
-    release:
-      types: [created]
-      branches: [ main ]
-      tags: [ "v*.*.*" ]
+  release:
+    types: [created]
+    branches: [ main ]
+    tags: [ "v*.*.*" ]
 
 
 jobs:
