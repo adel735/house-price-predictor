@@ -21,9 +21,9 @@ on:
         default: true
     
     release:
-      types: {created}
-      branches: { main }
-      tags: { "v*.*.*" }
+      types: [created]
+      branches: [ main ]
+      tags: [ "v*.*.*" ]
 
 
 jobs:
