@@ -24,6 +24,7 @@ on:
       types: [created]
       branches: [ main ]
       tags: [ "v*.*.*" ]
+        ..
 
 
 jobs:
