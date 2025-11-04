@@ -5,25 +5,25 @@ on:
     inputs:
       run_all:
         descriptions: "Run all jobs"
-        required: 'false'
-        default: 'true'
+        required: false
+        default: true
       run_data_processing:
         description: "Run data processing job"
-        required: 'false'
-        default: 'true'
+        required: false
+        default: true
       run_model_training:
         description: "Run model training job"
-        required: 'false'
-        default: 'true'
+        required: false
+        default: true
       run_build_and_publish:
         description: "Run build and publish job"
-        required: 'false'
-        default: 'true'
+        required: false
+        default: true
     
-    release:
-      types: {created}
-      branches: { main }
-      tags: { "v*.*.*" }
+  release:
+    types: {created}
+    branches: { main }
+    tags: { "v*.*.*" }
 
 
 jobs:
@@ -93,7 +93,7 @@ jobs:
     - name: wait for MLflow to start
       run: |
         for i in {1..30}; do
-          if curl -s http://localhost:5555/health | grep -q '"status":"healthy"'; then
+          if curl -s http://localhost:5000/health | grep -q '"status":"healthy"'; then
             echo "MLflow is up and running"
             break
           fi
