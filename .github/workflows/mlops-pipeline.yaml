@@ -61,7 +61,7 @@ jobs:
     needs: data-processing
     runs-on: ubuntu-latest
 
-     steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
