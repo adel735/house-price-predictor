@@ -19,7 +19,7 @@ on:
         description: "Run build and publish job"
         required: false
         default: true
-    ..
+    
     release:
       types: {created}
       branches: { main }
