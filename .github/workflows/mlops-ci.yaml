@@ -126,3 +126,25 @@ jobs:
         docker stop mlflow-server
         docker rm mlflow-server
         docker rmi ghcr.io/mlflow/mlflow:latest
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Get short SHA
+      id: slug
+      run: echo "sha7=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_OUTPUT
+
+     - name: Log in to Docker Hub
+       uses: docker/login-action@v3
+       with:
+         username: ${{ secrets.DOCKERHUB_USERNAME }}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+     - name: Build and push Docker image
+       uses: docker/build-push-action@v6
+       with:
+         context: .
+         push: true
+         tags: adelelmaghloub/house_price_app:latest,adelelmaghloub/house_price_app:${{ steps.slug.outputs.sha7 }}
