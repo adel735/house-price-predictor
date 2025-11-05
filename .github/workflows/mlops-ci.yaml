@@ -24,7 +24,6 @@ on:
     types: [created]
     branches: [main]
     tags: [ "v*.*.*" ]
-..
 jobs:
   data-processing:
     runs-on: ubuntu-latest
@@ -52,7 +51,7 @@ jobs:
       run: |
         python src/features/engineer.py \
         --input data/processed/cleaned_house_data.csv \
-        --output data/processed/featured_house_data
+        --output data/processed/featured_house_data.csv
 
     - name: Upload preprocessor
       uses: actions/upload-artifact@v5
