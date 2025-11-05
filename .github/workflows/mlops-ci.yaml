@@ -99,14 +99,13 @@ jobs:
     - name: wait for MLflow to start
       run: |
         for i in {1..30}; do
-          if if curl -s http://localhost:5000/health | grep -q '"status":"healthy"'; then
-            echo "MLflow is up and running"
-            break
-          fi
-            echo "Waiting for MLflow to start..."
-            sleep 2
-          done
-
+            if curl -s http://localhost:5000/health | grep -q '"status":"healthy"'; then
+              echo "MLflow is up and running"
+              break
+            fi
+              echo "Waiting for MLflow to start..."
+              sleep 2
+            done
     - name: Train the model
       run: |
         mkdir -p models
