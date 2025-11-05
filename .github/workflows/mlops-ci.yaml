@@ -57,7 +57,7 @@ jobs:
       uses: actions/upload-artifact@v5
       with:
         name: processed-data
-        path: data/processed/featued_house_data.csv
+        path: data/processed/featured_house_data.csv
 
     - name: Upload preprocessor
       uses: actions/upload-artifact@v5
