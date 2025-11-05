@@ -123,6 +123,6 @@ jobs:
 
     - name: Stop MLflow
       run: |
-        docker stop mlflow
-        docker rm mlflow
+        docker stop mlflow-server
+        docker rm mlflow-server
         docker rmi ghcr.io/mlflow/mlflow:latest
