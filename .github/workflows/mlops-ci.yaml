@@ -127,7 +127,7 @@ jobs:
         docker rm mlflow-server
         docker rmi ghcr.io/mlflow/mlflow:latest
   build_and_push:
-    needs: model_training
+    needs: model-training
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
