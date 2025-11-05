@@ -136,15 +136,23 @@ jobs:
       id: slug
       run: echo "sha7=$(echo ${GITHUB_SHA} | cut -c1-7)" >> $GITHUB_OUTPUT
 
+<<<<<<< HEAD
      - name: Log in to Docker Hub
        uses: docker/login-action@v3
        with:
          username: ${{ vars.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_TOKEN }}
+=======
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ vars.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+>>>>>>> 89076431591cf60f77b689354e3bf2fbc02bb384
 
-     - name: Build and push Docker image
-       uses: docker/build-push-action@v6
-       with:
-         context: .
-         push: true
-         tags: adelelmaghloub/house_price_app:latest,adelelmaghloub/house_price_app:${{ steps.slug.outputs.sha7 }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        push: true
+        tags: adelelmaghloub/house_price_app:latest,adelelmaghloub/house_price_app:${{ steps.slug.outputs.sha7 }}
