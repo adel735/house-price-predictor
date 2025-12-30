@@ -33,9 +33,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # 3. Add a basic route to trigger metrics
-@app.get("/")
-async def root():
-    return {"message": "House Price Prediction API is online"}
+
 
 Instrumentator().instrument(app).expose(app)
 

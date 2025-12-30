@@ -167,4 +167,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: adelelmaghloub/house_price_app:latest,adelelmaghloub/house_price_app:${{ steps.slug.outputs.sha7 }}
+        tags: adelelmaghloub/house_price_app:${{ steps.slug.outputs.sha7 }},adelelmaghloub/house_price_app:latest
