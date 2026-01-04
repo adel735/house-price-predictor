@@ -19,7 +19,8 @@ on:
         description: "Run build and publish job"
         required: false
         default: true
-  
+  push:
+    branches: [main]
   release:
     types: [created]
     branches: [main]
