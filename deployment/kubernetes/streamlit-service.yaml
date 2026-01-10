@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-01-05T10:25:49Z"
+  labels:
+    app: streamlit
+  name: streamlit
+  namespace: default
+  resourceVersion: "5542"
+  uid: 94cb8da4-6bf2-486e-8954-fbc3d556d4ba
+spec:
+  clusterIP: 10.96.221.116
+  clusterIPs:
+  - 10.96.221.116
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: "8501"
+    nodePort: 30000
+    port: 8501
+    protocol: TCP
+    targetPort: 8501
+  selector:
+    app: streamlit
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
